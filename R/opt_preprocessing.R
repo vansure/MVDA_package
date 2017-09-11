@@ -53,7 +53,7 @@ best_preprocessing = function(DB,nCentersRange,clustAlgos,som_dim ){
   clSummaryDat = clSummaryDat[order(clSummaryDat[,2]),]
   colnames(clSummaryDat) = c("Algo","nClusters",colnames(cl_summary)[2:6])
   clSummaryDat =  as.data.frame(clSummaryDat)
-  clSummaryDat$Index = round(as.numeric(as.vector(clSummaryDat$Index)),2)
+  clSummaryDat$Index = round(as.numeric(as.vector(clSummaryDat$Index)),4)
   
   g = ggplot(clSummaryDat, aes(Algo, Index, group =nClusters,colour =nClusters)) + 
     geom_line() 
