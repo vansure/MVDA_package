@@ -29,7 +29,7 @@ clustering_summary <- function(DB, cluster){
 
     toPrint[j,3] = round(1-mean(intra.avg),digits = 4)
     toPrint[j,4] = round(1-mean(inter.c),digits = 4)
-    toPrint[j,5] = round(1 - (length(table(cluster))/NOBJS),4)
+    toPrint[j,5] = round(1 - (length(table(cluster))/NOBJS),digits = 4)
 
     toPrint[j,6] =(1/3) * ( ((toPrint[j,3]+1)/2) + (1-(toPrint[j,4]+1)/2) +
                               (1-(toPrint[j,2]/length(table(cluster)))) ) # + toPrint[j,5])
