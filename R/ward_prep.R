@@ -17,7 +17,7 @@ ward_hls_prep<-function(DB=NULL,nCenters = NULL){
       }
       else{
         cat("Execute hierarchical clustering with ward methods...\n")
-        DB.dist <- as.dist(1-cor(x=t(DB),method="pearson",use="pairwise.complete.obs"));
+        DB.dist <- as.dist(1-abs(cor(x=t(DB),method="pearson",use="pairwise.complete.obs")));
         hls <- hclust(d=DB.dist^2,method="ward.D")
         hls.clust <- cutree(hls,nCenters)
         cat("Finding centers...\n")
