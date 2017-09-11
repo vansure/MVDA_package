@@ -9,7 +9,7 @@
 
 
 clustering_summary <- function(DB, cluster){
-  diss.cor <-1- cor(t(DB),method="pearson")
+  diss.cor <-1- abs(cor(t(DB),method="pearson"))
   toPrint <- matrix(0,nrow=1,ncol=6)
   NOBJS = dim(DB)[1]
 
