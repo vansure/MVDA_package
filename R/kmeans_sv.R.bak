@@ -13,7 +13,7 @@
 #' @export
 
 kmeans_sv <- function(nCenters,prototype,method="pearson",
-                    corr.use="pairwise.complete.obs",iter.max=10000,nstart=100){
+                    corr.use="pairwise.complete.obs",iter.max=10000,nstart=10){
   
   require(amap)
   if(is.null(prototype) || is.null(nCenters)){
