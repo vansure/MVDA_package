@@ -20,7 +20,7 @@ pamk_preprocessing<-function(DB=NULL,nCenters = NULL,initial_medoids=NULL){
     }
     else{
       cat("Execute pamk clustering...\n")
-      DB.diss <- as.dist(1-(cor(x=t(DB),method="pearson",use="pairwise.complete.obs")));
+      DB.diss <- as.dist(1-abs(cor(x=t(DB),method="pearson",use="pairwise.complete.obs")));
       
       pamk(data=DB.diss,krange = nCenters,diss=TRUE,medoids=initial_medoids)->DB_pamk
       DB_pamk$pamobject$clustering -> clusters

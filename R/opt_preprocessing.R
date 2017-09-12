@@ -35,7 +35,7 @@ best_preprocessing = function(DB,nCentersRange,clustAlgos,som_dim ){
       if(clAlgo == "Pam"){
         prep_res = pamk_preprocessing(DB = DB,nCenters = nCentersRange[i])
       }
-      if(clAlgo ==" Ward"){
+      if(clAlgo == "Ward"){
         prep_res = ward_hls_prep(DB = DB,nCenters = nCentersRange[i])
       }
       if(clAlgo == "Pvclust"){
